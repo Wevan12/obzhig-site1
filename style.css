@@ -134,9 +134,20 @@ a:hover{ color: var(--clay); }
 }
 .card-piece .piece-thumb{
   aspect-ratio: 4/3;
-  background-size: cover;
-  background-position: center;
-  opacity:1;
+  overflow: hidden;
+}
+.card-piece .piece-thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.catalog-thumb{
+  width: 56px;
+  height: 44px;
+  border-radius: 4px;
+  object-fit: cover;
+  display: block;
 }
 .card-piece .card-body{ padding:1.1rem 1.2rem 1.3rem; }
 .price{
