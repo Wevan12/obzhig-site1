@@ -1,0 +1,225 @@
+/* =====================================================
+   ОБЖИГ — единый файл стилей сайта
+   Используется на всех трёх страницах (index/catalog/order)
+   Дополняет Bootstrap 5 собственными переменными и классами
+   ===================================================== */
+
+/* ---- Цветовые и прочие переменные (design tokens) ---- */
+:root{
+  --bg: #EFE8DA;
+  --card: #FBF7EF;
+  --ink: #2B2622;
+  --ink-soft: #5B5147;
+  --clay: #B5533C;
+  --clay-dark: #8F3F2C;
+  --sage: #78876B;
+  --gold: #C79A45;
+  --line: #DCD2BE;
+  --radius: 4px;
+}
+
+body{
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+h1,h2,h3,.brand-word{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+a{ color: var(--clay-dark); }
+a:hover{ color: var(--clay); }
+
+/* ---- Header / nav ---- */
+.site-header{
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  text-decoration:none;
+  color: var(--ink);
+}
+.brand-word{
+  font-size:1.35rem;
+  letter-spacing:.04em;
+  color: var(--ink);
+}
+.brand-tagline{
+  font-size:.68rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color: var(--ink-soft);
+  display:block;
+  margin-top:-4px;
+}
+.navbar-nav .nav-link{
+  color: var(--ink-soft);
+  font-weight:500;
+  letter-spacing:.02em;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover{
+  color: var(--clay-dark);
+}
+.btn-clay{
+  background: var(--clay);
+  border-color: var(--clay);
+  color: #fff;
+  border-radius: var(--radius);
+}
+.btn-clay:hover{
+  background: var(--clay-dark);
+  border-color: var(--clay-dark);
+  color:#fff;
+}
+.btn-outline-clay{
+  border-color: var(--clay);
+  color: var(--clay-dark);
+  border-radius: var(--radius);
+}
+.btn-outline-clay:hover{
+  background: var(--clay);
+  color:#fff;
+}
+
+/* ---- Kiln-arch divider: signature motif ---- */
+.arch-row{
+  display:flex;
+  line-height:0;
+  color: var(--clay);
+  opacity:.55;
+}
+.arch-row svg{ width:100%; height:18px; }
+
+/* ---- Hero ---- */
+.hero{
+  padding: 4.5rem 0 3.5rem;
+}
+.hero .eyebrow{
+  color: var(--sage);
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-size:.75rem;
+  font-weight:600;
+}
+.hero h1{
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  line-height:1.05;
+}
+.hero p.lead{
+  color: var(--ink-soft);
+  max-width: 42ch;
+}
+.hero-vessel{
+  width:100%;
+  height:auto;
+}
+
+/* ---- Cards ---- */
+.card-piece{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow:hidden;
+  height:100%;
+}
+.card-piece .piece-thumb{
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+.card-piece .piece-thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.catalog-thumb{
+  width: 56px;
+  height: 44px;
+  border-radius: 4px;
+  object-fit: cover;
+  display: block;
+}
+.card-piece .card-body{ padding:1.1rem 1.2rem 1.3rem; }
+.price{
+  font-family:'Montserrat', sans-serif;
+  color: var(--clay-dark);
+  font-weight:700;
+}
+.glaze-dot{
+  width:14px; height:14px; border-radius:50%;
+  display:inline-block; margin-right:6px; border:1px solid rgba(0,0,0,.15);
+}
+
+/* ---- Table (catalog list) ---- */
+.table-catalog thead{
+  background: var(--ink);
+  color: var(--bg);
+  font-family:'Montserrat', sans-serif;
+  font-weight:600;
+  letter-spacing:.03em;
+}
+.table-catalog td, .table-catalog th{ vertical-align:middle; }
+.table-catalog tbody tr{ background: var(--card); }
+.swatch{
+  width:16px;height:16px;border-radius:50%;display:inline-block;border:1px solid rgba(0,0,0,.15);
+}
+
+/* ---- Form page ---- */
+.form-panel{
+  background: var(--card);
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 2.2rem;
+}
+.form-label{
+  font-weight:600;
+  color: var(--ink);
+}
+.form-control, .form-select{
+  border-radius: var(--radius);
+  border-color: var(--line);
+}
+.form-control:focus, .form-select:focus{
+  border-color: var(--clay);
+  box-shadow: 0 0 0 .2rem rgba(181,83,60,.15);
+}
+.form-check-input:checked{
+  background-color: var(--clay);
+  border-color: var(--clay);
+}
+
+/* ---- Section labels ---- */
+.section-eyebrow{
+  color: var(--sage);
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-size:.72rem;
+  font-weight:700;
+}
+
+/* ---- Footer ---- */
+.site-footer{
+  background: var(--ink);
+  color: var(--bg);
+  margin-top: 4rem;
+  padding: 3rem 0 2rem;
+}
+.site-footer a{ color: var(--bg); opacity:.8; text-decoration:none; }
+.site-footer a:hover{ opacity:1; text-decoration:underline; }
+.site-footer .brand-word{ color: var(--bg); }
+.site-footer hr{ border-color: rgba(255,255,255,.15); }
+.footer-fine{ color: rgba(239,232,218,.55); font-size:.82rem; }
+
+@media (max-width: 767px){
+  .form-panel{ padding:1.4rem; }
+}
